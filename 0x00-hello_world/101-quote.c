@@ -1,17 +1,11 @@
 #include <stdio.h>
+#include <unistd.h>
 /**
  * main - this is the main function
  *
- * Return: this ends the code
+ * Return: this ends with 1
  */
-
 int main(void)
 {
-	FILE *fp;
-	if(fp == NULL)
-
-       	{
-	perror("and that piece of art is useful\" - Dora Korpar, 2015-10-19" \n);
-	return(1);
-   }
-}
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
+	return(1);}
