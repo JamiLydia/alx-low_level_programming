@@ -1,7 +1,7 @@
 	.file	"5-printf.c"
 	.intel_syntax noprefix
 	.text
-	.section	.rodata
+	.section	.rodata.str1.8,"aMS",@progbits,1
 	.align 8
 .LC0:
 	.string	"with proper grammar, but the outcome is a piece of art,"
@@ -9,22 +9,19 @@
 	.globl	main
 	.type	main, @function
 main:
-.LFB0:
+.LFB23:
 	.cfi_startproc
 	endbr64
-	push	rbp
+	sub	rsp, 8
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	mov	rbp, rsp
-	.cfi_def_cfa_register 6
 	lea	rdi, .LC0[rip]
 	call	puts@PLT
 	mov	eax, 0
-	pop	rbp
-	.cfi_def_cfa 7, 8
+	add	rsp, 8
+	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE0:
+.LFE23:
 	.size	main, .-main
 	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
 	.section	.note.GNU-stack,"",@progbits
